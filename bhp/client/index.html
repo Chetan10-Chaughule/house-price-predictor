@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header id="header" class="header d-flex flex-column justify-content-center">
+        <i class="header-toggle d-xl-none bi bi-list" aria-label="Toggle navigation"></i>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#home" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+                <li><a href="#about"><i class="bi bi-person navicon"></i><span>About Us</span></a></li>
+                <li><a href="#benefits"><i class="bi bi-check-circle navicon"></i><span>Benefits</span></a></li>
+                <li><a href="#predict"><i class="bi bi-file-earmark-text navicon"></i><span>Predict Now</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="overlay">
+            <h1>Welcome to RealValueX </h1>
+            <p>Your trusted partner in predicting house prices based on location, area, and more.</p>
+            <a href="#predict" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We specialize in providing accurate house price predictions based on cutting-edge machine learning models. Our platform helps buyers and sellers make informed decisions with real-time data analytics.</p>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <h2>Benefits of House Price Prediction</h2>
+        <ul>
+            <li>
+                Accurate Pricing: Provides precise price estimates using real-time market data.
+                Market Insights: Identifies emerging neighborhoods for strategic investments.
+                Time-Saving: Automates price estimation, eliminating lengthy calculations.
+                Localized Data: Uses specific locality data for relevance and accuracy.
+                Informed Negotiations: Empowers better negotiation strategies with data-driven insights.
+                Risk Mitigation: Identifies potential risks and opportunities in the market.
+                Understanding Market Trends: Forecasts future price movements for long-term planning.
+                Personalized Recommendations: Offers tailored suggestions based on individual needs.
+                Enhanced Transparency: Promotes market transparency with accessible data.
+                Support for Developers: Helps developers align projects with market demand.
+        </ul>
+    </section>
+
+    <!-- Prediction Form Section -->
+    <section id="predict" class="form-section">
+        <h2>Predict House Price</h2>
+        <div class="form-container">
+            <form id="predictionForm">
+                <label for="uiSqft">Area (in sq ft):</label>
+                <input type="number" id="uiSqft" name="uiSqft" required>
+
+                <label for="uiBHK">BHK:</label>
+                <select id="uiBHK" name="uiBHK">
+                    <option value="" disabled selected>Select BHK</option>
+                    <option value="1">1 BHK</option>
+                    <option value="2">2 BHK</option>
+                    <option value="3">3 BHK</option>
+                    <option value="4">4 BHK</option>
+                    <option value="5">5 BHK</option>
+                </select>
+
+                <label for="uiBathrooms">Bathrooms:</label>
+                <select id="uiBathrooms" name="uiBathrooms">
+                    <option value="" disabled selected>Select Bathrooms</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="uiLocations">Location:</label>
+                <select id="uiLocations">
+                    <option value="" disabled selected>Select Location</option>
+                    <!-- Locations will be dynamically loaded here from the backend -->
+                </select>
+
+                <button type="button" class="submit-btn" onclick="onClickedEstimatePrice()">Predict Price</button>
+            </form>
+
+            <div id="loading" class="loading-animation">Loading...</div>
+            <div id="uiEstimatedPrice" class="result-section"></div>
+        </div>
+    </section>
+
+</body>
+</html>
